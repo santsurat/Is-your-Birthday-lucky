@@ -8,19 +8,15 @@
  
  }
  .container  {
-     width:30%;
      margin: auto;
-   
+     width: 20%;
+    
  }
  
- input,
- label{
- 
- text-align:center
- }
  input{
      margin-bottom: 0.5rem;
-      
+     display: block;
+    
      
  }
  #check-number{
@@ -31,6 +27,7 @@
  #Reset-number{
      margin-top:1rem;
      border-radius:1px;
+     display: block;
  
      
    
