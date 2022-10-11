@@ -4,37 +4,42 @@ const checkNumberButton = document.querySelector("#check-number");
 const outputBox = document.querySelector("#output-box");
 const resetButton = document.querySelector('#Reset-number');
 //debugger
-function compareValues(sum, luckyNumber){
-if (sum % luckyNumber === 0) {
-  outputBox.innerText = "Your Birthday is lucky 🔥";
-} else {
-  outputBox.innerText = "Your Birth is not lucky 😟";
- }
- if (dateOfBirth.value && luckyNumber.value !== "") {
-  sumOfBirthday()
-} else {
-  outputBox.innerText = "print the both fields"
-}
 
-}
 function checkBirthDateIsLucky() {
-  const dob = dateOfBirth.value;
-  const sum = calculateSum(dob);
-  compareValues(sum, luckyNumber.value)
+    
+
+    if (dateOfBirth.value && luckyNumber.value !== "") {
+        sumOfBirthday()
+    } else {
+        outputBox.innerText = "print the both fields"
+    }
+
+
 }
 
 
-function calculateSum(dob) {
-  dob = dob.replaceAll("-", "");
-  console.log(dob.length);
-  let sum = 0;
-  // for (let index = 0; index < dob.length; index++) {
-  //   sum = sum + Number(dob.charAt(index));
-  // }
-for(let surat of dob){
-    sum = sum + Number(surat);
+function sumOfBirthday() {
+    var actualBirthday = dateOfBirth.value
+    var sumBirthday = actualBirthday.replaceAll("-", "");
+    /* console.log(sumBirthday) */
+    var sumOfBirthday = 0;
+    for (i = 0; i < sumBirthday.length; i++)
+        sumOfBirthday = sumOfBirthday + Number(sumBirthday.charAt(i))
+    console.log(sumOfBirthday)
+    compare(sumOfBirthday, luckyNumber.value)
+
 }
-  return sum;
+
+function compare(sumOfBirthday, lucky) {
+
+
+    if (sumOfBirthday % lucky === 0) {
+        outputBox.innerText="you are lucky"
+    } else {
+        outputBox.innerText="you are not lucky"
+    }
+
+
 }
 
 resetButton.addEventListener("click", function ResetButton() {
