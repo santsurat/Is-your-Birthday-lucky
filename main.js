@@ -10,13 +10,19 @@ if (sum % luckyNumber === 0) {
 } else {
   outputBox.innerText = "Your Birth is not lucky 😟";
  }
+ if (dateOfBirth.value && luckyNumber.value !== "") {
+  sumOfBirthday()
+} else {
+  outputBox.innerText = "print the both fields"
+}
+
 }
 function checkBirthDateIsLucky() {
   const dob = dateOfBirth.value;
   const sum = calculateSum(dob);
   compareValues(sum, luckyNumber.value)
-  
 }
+
 
 function calculateSum(dob) {
   dob = dob.replaceAll("-", "");
